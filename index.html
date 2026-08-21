@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00152f" />
+    <meta name="description" content="Aqua Nomad is currently preparing a new online experience." />
+    <title>Aqua Nomad | Under Maintenance</title>
+    <style>
+      :root {
+        --navy: #00152f;
+        --navy-light: #052a48;
+        --cyan: #27d7df;
+        --cyan-soft: #6be1e7;
+        --white: #f5fdff;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body { min-height: 100%; }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--white);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 80% 10%, rgba(39, 215, 223, .16), transparent 28rem),
+          linear-gradient(145deg, var(--navy-light), var(--navy) 55%, #000b1b);
+      }
+
+      .page {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 32px 20px;
+      }
+
+      .bubbles, .bubbles::before, .bubbles::after {
+        position: absolute;
+        border: 1px solid rgba(107, 225, 231, .2);
+        border-radius: 999px;
+        content: "";
+      }
+
+      .bubbles { width: 240px; height: 240px; right: -80px; top: 12%; }
+      .bubbles::before { width: 74px; height: 74px; left: -110px; top: 210px; }
+      .bubbles::after { width: 28px; height: 28px; left: -42px; top: 138px; }
+
+      .content {
+        width: min(760px, 100%);
+        text-align: center;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 54px;
+        color: var(--white);
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        font-weight: 900;
+        letter-spacing: .2em;
+        text-decoration: none;
+      }
+
+      .logo-mark {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(107, 225, 231, .45);
+        border-radius: 50%;
+        color: var(--cyan);
+        box-shadow: 0 0 30px rgba(39, 215, 223, .14);
+      }
+
+      .logo-mark svg { width: 27px; }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--cyan);
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .4em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 700px;
+        margin: 0 auto 24px;
+        font-size: clamp(3rem, 10vw, 6.8rem);
+        font-weight: 950;
+        letter-spacing: -.065em;
+        line-height: .88;
+        text-transform: uppercase;
+      }
+
+      h1 span {
+        display: block;
+        color: var(--cyan-soft);
+      }
+
+      .message {
+        max-width: 570px;
+        margin: 0 auto;
+        color: rgba(245, 253, 255, .7);
+        font-size: clamp(1rem, 2vw, 1.1rem);
+        line-height: 1.8;
+      }
+
+      .divider {
+        width: 58px;
+        height: 3px;
+        margin: 34px auto;
+        border: 0;
+        border-radius: 99px;
+        background: var(--cyan);
+        box-shadow: 0 0 18px rgba(39, 215, 223, .65);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 17px;
+        border: 1px solid rgba(107, 225, 231, .2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .04);
+        color: rgba(245, 253, 255, .75);
+        font-size: .75rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        backdrop-filter: blur(10px);
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 0 5px rgba(39, 215, 223, .1);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 22px;
+        color: rgba(245, 253, 255, .38);
+        font-size: .7rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .wave {
+        position: absolute;
+        z-index: -1;
+        right: -10%;
+        bottom: -38%;
+        left: -10%;
+        height: 58%;
+        border-radius: 48% 52% 0 0 / 18% 22% 0 0;
+        background: rgba(39, 215, 223, .035);
+        transform: rotate(-2deg);
+      }
+
+      @keyframes pulse {
+        50% { opacity: .45; transform: scale(.82); }
+      }
+
+      @media (max-width: 540px) {
+        .page { padding-bottom: 72px; }
+        .logo { margin-bottom: 42px; }
+        .message { line-height: 1.65; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .status-dot { animation: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="bubbles" aria-hidden="true"></div>
+      <div class="wave" aria-hidden="true"></div>
+
+      <section class="content" aria-labelledby="maintenance-title">
+        <div class="logo" aria-label="Aqua Nomad">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 28c8-11 16-11 24 0s16 11 24 0c4-5 7-6 10-6" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M13 14c5-7 10-7 15 0s10 7 15 0" stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+            </svg>
+          </span>
+          <span>AQUA NOMAD</span>
+        </div>
+
+        <p class="eyebrow">Something exciting is surfacing</p>
+        <h1 id="maintenance-title">We’ll be <span>back soon.</span></h1>
+        <p class="message">
+          We’re diving beneath the surface to improve your Aqua Nomad experience.
+          Our website is temporarily under maintenance—thank you for your patience.
+        </p>
+        <hr class="divider" />
+        <div class="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Maintenance in progress
+        </div>
+      </section>
+
+      <footer>&copy; <span id="year"></span> Aqua Nomad</footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
